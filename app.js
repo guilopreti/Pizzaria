@@ -126,3 +126,4 @@ const Formatters = {
 // Expõe globalmente para todas as telas usarem
 window.PizzaStore = PizzaStore;
 window.Formatters = Formatters;
+  

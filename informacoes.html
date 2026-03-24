@@ -1,0 +1,598 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Informações - Vuota Pizzaria</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./css/informacoes.css" />
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <nav class="navbar" id="navbar">
+      <a href="./index.html" class="navbar__logo">
+        <svg class="navbar__logo-icon" width="30" height="30">
+          <use href="./icons.svg#icon-pizza" />
+        </svg>
+        <span>Vuota</span>Pizzaria
+      </a>
+      <ul class="navbar__menu" id="navMenu">
+        <li><a href="./index.html" class="navbar__link">Início</a></li>
+        <li>
+          <a href="./cardapio.html" class="navbar__link navbar__link--cta"
+            >Faça seu Pedido</a
+          >
+        </li>
+        <li><a href="./pedidos.html" class="navbar__link">Meus Pedidos</a></li>
+        <li>
+          <a href="./informacoes.html" class="navbar__link active"
+            >Informações</a
+          >
+        </li>
+      </ul>
+      <button class="navbar__hamburger" id="hamburger" aria-label="Abrir menu">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+
+    <main class="page-wrapper">
+      <!-- PAGE HERO -->
+      <section class="page-hero">
+        <div class="page-hero__overlay"></div>
+        <div class="page-hero__content">
+          <div class="page-hero__eyebrow">Conheça a Vuota</div>
+          <h1 class="page-hero__title">
+            Tudo o que você precisa<br /><span>saber sobre nós</span>
+          </h1>
+          <p class="page-hero__subtitle">
+            Endereço, horários, formas de pagamento e área de entrega —<br />
+            tudo em um só lugar.
+          </p>
+        </div>
+      </section>
+
+      <!-- STATS STRIP -->
+      <div class="stats-strip">
+        <div class="container">
+          <div class="stats-grid">
+            <div class="stat-item animate-up">
+              <div class="stat-item__number">15+</div>
+              <div class="stat-item__label">Anos de história</div>
+            </div>
+            <div class="stat-item animate-up">
+              <div class="stat-item__number">3×</div>
+              <div class="stat-item__label">Prêmio melhor pizzaria</div>
+            </div>
+            <div class="stat-item animate-up">
+              <div class="stat-item__number">40 min</div>
+              <div class="stat-item__label">Tempo médio de entrega</div>
+            </div>
+            <div class="stat-item animate-up">
+              <div class="stat-item__number">4.9</div>
+              <div class="stat-item__label">Avaliação média ⭐</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CONTATO & HORÁRIOS -->
+      <section class="section" id="contato">
+        <div class="container">
+          <div class="section-title animate-up">
+            <span class="section-title__eyebrow">Fale conosco</span>
+            <h2 class="section-title__heading">Contato & Horários</h2>
+            <div class="divider"></div>
+            <p class="section-title__subheading">
+              Estamos aqui para atendê-lo. Entre em contato ou venha nos
+              visitar!
+            </p>
+          </div>
+
+          <div class="info-grid">
+            <!-- Coluna de Contato -->
+            <div class="contact-cards animate-up">
+              <div class="contact-card">
+                <div class="contact-card__icon">📍</div>
+                <div class="contact-card__body">
+                  <div class="contact-card__label">Endereço</div>
+                  <div class="contact-card__value">Rua das Pizzas, 123</div>
+                  <div class="contact-card__detail">
+                    Centro — São Paulo, SP<br />CEP: 01310-100
+                  </div>
+                </div>
+              </div>
+
+              <div class="contact-card">
+                <div class="contact-card__icon">📞</div>
+                <div class="contact-card__body">
+                  <div class="contact-card__label">Telefone & WhatsApp</div>
+                  <div class="contact-card__value">(11) 98765-4321</div>
+                  <div class="contact-card__detail">
+                    Atendimento de Seg a Dom<br />das 17h30 às 23h30
+                  </div>
+                </div>
+              </div>
+
+              <div class="contact-card">
+                <div class="contact-card__icon">✉️</div>
+                <div class="contact-card__body">
+                  <div class="contact-card__label">E-mail</div>
+                  <div class="contact-card__value">contato@vuota.com.br</div>
+                  <div class="contact-card__detail">
+                    Respondemos em até 24h<br />para dúvidas e sugestões
+                  </div>
+                </div>
+              </div>
+
+              <div class="contact-card">
+                <div class="contact-card__icon">📱</div>
+                <div class="contact-card__body">
+                  <div class="contact-card__label">Redes Sociais</div>
+                  <div class="contact-card__value">@vuotapizzaria</div>
+                  <div class="contact-card__detail">
+                    Instagram · Facebook · TikTok<br />Siga e fique por dentro
+                    das novidades!
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Horários -->
+            <div class="animate-up">
+              <div class="hours-card">
+                <div class="hours-card__header">
+                  <span class="hours-card__header-icon">🕐</span>
+                  <div>
+                    <div class="hours-card__header-title">
+                      Horário de Funcionamento
+                    </div>
+                    <div class="hours-card__header-sub">
+                      Incluindo feriados nacionais
+                    </div>
+                  </div>
+                </div>
+                <div class="hours-list">
+                  <div class="hours-item">
+                    <span class="hours-item__day">
+                      <span
+                        class="hours-item__dot hours-item__dot--closed"
+                      ></span>
+                      Segunda-feira
+                    </span>
+                    <span class="hours-item__time">Fechado</span>
+                  </div>
+                  <div class="hours-item">
+                    <span class="hours-item__day">
+                      <span class="hours-item__dot"></span>
+                      Terça-feira
+                    </span>
+                    <span class="hours-item__time hours-item__time--open"
+                      >18h às 23h</span
+                    >
+                  </div>
+                  <div class="hours-item">
+                    <span class="hours-item__day">
+                      <span class="hours-item__dot"></span>
+                      Quarta-feira
+                    </span>
+                    <span class="hours-item__time hours-item__time--open"
+                      >18h às 23h</span
+                    >
+                  </div>
+                  <div class="hours-item">
+                    <span class="hours-item__day">
+                      <span class="hours-item__dot"></span>
+                      Quinta-feira
+                      <span class="hours-badge" style="display: none"
+                        >Hoje</span
+                      >
+                    </span>
+                    <span class="hours-item__time hours-item__time--open"
+                      >18h às 23h</span
+                    >
+                  </div>
+                  <div class="hours-item">
+                    <span class="hours-item__day">
+                      <span class="hours-item__dot"></span>
+                      Sexta-feira
+                    </span>
+                    <span class="hours-item__time hours-item__time--open"
+                      >18h às 00h</span
+                    >
+                  </div>
+                  <div class="hours-item">
+                    <span class="hours-item__day">
+                      <span class="hours-item__dot"></span>
+                      Sábado
+                    </span>
+                    <span class="hours-item__time hours-item__time--open"
+                      >17h30 às 00h30</span
+                    >
+                  </div>
+                  <div class="hours-item">
+                    <span class="hours-item__day">
+                      <span class="hours-item__dot"></span>
+                      Domingo
+                    </span>
+                    <span class="hours-item__time hours-item__time--open"
+                      >17h30 às 23h</span
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <!-- Status atual -->
+              <div id="status-banner" class="status-banner"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- MAPA -->
+      <section class="section section--alt" id="localizacao">
+        <div class="container">
+          <div class="section-title animate-up">
+            <span class="section-title__eyebrow">Como Chegar</span>
+            <h2 class="section-title__heading">Nossa Localização</h2>
+            <div class="divider"></div>
+            <p class="section-title__subheading">
+              No coração do Centro, fácil de achar e ainda mais fácil de amar.
+            </p>
+          </div>
+
+          <div class="map-wrapper animate-up">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.1!2d-46.6543!3d-23.5505!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjPCsDMzJzAxLjgiUyA0NsKwMzknMTUuNSJX!5e0!3m2!1spt-BR!2sbr!4v1234567890"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title="Localização da Vuota Pizzaria"
+            >
+            </iframe>
+            <div class="map-overlay-badge">
+              <span class="map-overlay-badge__icon">📍</span>
+              <div>
+                <div class="map-overlay-badge__text">Vuota Pizzaria</div>
+                <div class="map-overlay-badge__sub">
+                  Rua das Pizzas, 123 – Centro
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="map-actions">
+            <a
+              href="https://maps.google.com/?q=Rua+das+Pizzas+123+Centro+São+Paulo"
+              target="_blank"
+              class="btn btn--primary"
+            >
+              🗺️ Abrir no Google Maps
+            </a>
+            <a
+              href="https://waze.com/ul?q=Rua+das+Pizzas+123+São+Paulo"
+              target="_blank"
+              class="btn btn--outline"
+            >
+              🚗 Abrir no Waze
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ÁREA DE ENTREGA -->
+      <section class="section" id="entrega">
+        <div class="container">
+          <div class="section-title animate-up">
+            <span class="section-title__eyebrow">Delivery</span>
+            <h2 class="section-title__heading">Área de Entrega</h2>
+            <div class="divider"></div>
+            <p class="section-title__subheading">
+              Entregamos em toda a região central e bairros próximos.
+            </p>
+          </div>
+
+          <div class="delivery-grid animate-up">
+            <div class="delivery-zone delivery-zone--green">
+              <div class="delivery-zone__icon">🟢</div>
+              <div class="delivery-zone__name">Zona 1 – Centro</div>
+              <div class="delivery-zone__time">⏱ até 30 minutos</div>
+              <div class="delivery-zone__fee delivery-zone__fee--free">
+                Frete Grátis
+              </div>
+              <div class="delivery-zone__neighborhoods">
+                Centro · República · Sé · Santa Efigênia
+              </div>
+            </div>
+
+            <div class="delivery-zone delivery-zone--yellow">
+              <div class="delivery-zone__icon">🟡</div>
+              <div class="delivery-zone__name">Zona 2 – Próximo</div>
+              <div class="delivery-zone__time">⏱ até 45 minutos</div>
+              <div class="delivery-zone__fee">R$ 5,90</div>
+              <div class="delivery-zone__neighborhoods">
+                Consolação · Bela Vista · Liberdade · Cambuci
+              </div>
+            </div>
+
+            <div class="delivery-zone delivery-zone--red">
+              <div class="delivery-zone__icon">🔴</div>
+              <div class="delivery-zone__name">Zona 3 – Estendida</div>
+              <div class="delivery-zone__time">⏱ até 60 minutos</div>
+              <div class="delivery-zone__fee">R$ 9,90</div>
+              <div class="delivery-zone__neighborhoods">
+                Pinheiros · Itaim · Vila Madalena · Moema
+              </div>
+            </div>
+          </div>
+
+          <p class="delivery-note">
+            🛵 Pedido mínimo de <strong>R$ 25,00</strong> para delivery
+            &nbsp;·&nbsp; Frete grátis em pedidos acima de
+            <strong>R$ 80,00</strong> em qualquer zona
+          </p>
+        </div>
+      </section>
+
+      <!-- PAGAMENTOS -->
+      <section class="section section--alt" id="pagamento">
+        <div class="container">
+          <div class="section-title animate-up">
+            <span class="section-title__eyebrow">Pagamentos</span>
+            <h2 class="section-title__heading">Formas de Pagamento</h2>
+            <div class="divider"></div>
+            <p class="section-title__subheading">
+              Aceitamos as principais formas de pagamento para sua conveniência.
+            </p>
+          </div>
+
+          <div class="payment-methods animate-up">
+            <div class="payment-pill">
+              <span class="payment-pill__icon">💳</span> Visa
+            </div>
+            <div class="payment-pill">
+              <span class="payment-pill__icon">💳</span> Mastercard
+            </div>
+            <div class="payment-pill">
+              <span class="payment-pill__icon">💳</span> Elo
+            </div>
+            <div class="payment-pill">
+              <span class="payment-pill__icon">💳</span> American Express
+            </div>
+            <div class="payment-pill">
+              <span class="payment-pill__icon">🔵</span> PIX
+            </div>
+            <div class="payment-pill">
+              <span class="payment-pill__icon">💵</span> Dinheiro
+            </div>
+            <div class="payment-pill">
+              <span class="payment-pill__icon">🍔</span> iFood Pay
+            </div>
+            <div class="payment-pill">
+              <span class="payment-pill__icon">🎟️</span> Vale Refeição (VR)
+            </div>
+            <div class="payment-pill">
+              <span class="payment-pill__icon">🎟️</span> Alelo
+            </div>
+            <div class="payment-pill">
+              <span class="payment-pill__icon">🎟️</span> Sodexo
+            </div>
+          </div>
+
+          <p class="payment-note">
+            💡 Pagamento online disponível no app e site &nbsp;·&nbsp; Pagamento
+            na entrega aceito para pedidos até R$ 200,00
+          </p>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section class="section" id="faq">
+        <div class="container">
+          <div class="section-title animate-up">
+            <span class="section-title__eyebrow">Dúvidas</span>
+            <h2 class="section-title__heading">Perguntas Frequentes</h2>
+            <div class="divider"></div>
+          </div>
+
+          <div class="faq-list animate-up">
+            <div class="faq-item">
+              <button class="faq-question" data-faq="0">
+                Qual o prazo de entrega?
+                <span class="faq-chevron">▾</span>
+              </button>
+              <div class="faq-answer" data-faq-answer="0">
+                Nosso tempo médio de entrega é de 35 a 45 minutos dependendo da
+                sua localização. Garantimos que sua pizza chegue quentinha —
+                caso ultrapasse 60 minutos, você recebe um desconto de 20% no
+                próximo pedido automaticamente.
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" data-faq="1">
+                Vocês fazem pizza meio a meio?
+                <span class="faq-chevron">▾</span>
+              </button>
+              <div class="faq-answer" data-faq-answer="1">
+                Sim! Todas as nossas pizzas podem ser feitas meio a meio. No
+                cardápio online, basta selecionar "Metade & Metade" e escolher
+                dois sabores diferentes. O preço final é calculado com base no
+                sabor de maior valor.
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" data-faq="2">
+                Posso fazer pedidos com antecedência?
+                <span class="faq-chevron">▾</span>
+              </button>
+              <div class="faq-answer" data-faq-answer="2">
+                Sim! Aceitamos pedidos agendados com até 2 horas de
+                antecedência. Para eventos e grupos acima de 10 pizzas, entre em
+                contato direto pelo WhatsApp (11) 98765-4321 para agendar com
+                mais tempo e garantir disponibilidade.
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" data-faq="3">
+                Vocês têm opções vegetarianas ou veganas?
+                <span class="faq-chevron">▾</span>
+              </button>
+              <div class="faq-answer" data-faq-answer="3">
+                Com certeza! Temos diversas opções vegetarianas no cardápio,
+                como Margherita, Cogumelos, Abobrinha com Ricota e mais. Para
+                veganos, oferecemos a base de molho de tomate com legumes
+                grelhados — o queijo pode ser substituído por queijo vegano sob
+                consulta.
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" data-faq="4">
+                Como posso acompanhar meu pedido?
+                <span class="faq-chevron">▾</span>
+              </button>
+              <div class="faq-answer" data-faq-answer="4">
+                Após confirmar seu pedido, você pode acompanhar o status em
+                tempo real na seção "Meus Pedidos" do nosso site. Também
+                enviamos atualizações via WhatsApp em cada etapa: confirmação,
+                preparo, saiu para entrega e entregue.
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" data-faq="5">
+                Posso retirar no local?
+                <span class="faq-chevron">▾</span>
+              </button>
+              <div class="faq-answer" data-faq-answer="5">
+                Sim, aceitamos retirada no balcão! Basta selecionar a opção
+                "Retirar no Local" ao finalizar seu pedido. Você recebe uma
+                notificação quando sua pizza estiver pronta — geralmente em 20 a
+                25 minutos.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA BANNER -->
+      <section class="cta-banner">
+        <div class="container">
+          <h2 class="cta-banner__title">Pronto para pedir?</h2>
+          <p class="cta-banner__text">
+            Monte seu pedido em menos de 2 minutos e receba quentinho em casa.
+          </p>
+          <a href="cardapio.html" class="btn btn--outline-white btn--lg">
+            <svg width="22" height="22">
+              <use href="../../icons.svg#icon-pizza" />
+            </svg>
+            Fazer Pedido Agora →
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__grid">
+          <div>
+            <h4 class="footer__title">
+              <svg
+                style="
+                  display: inline;
+                  vertical-align: middle;
+                  margin-right: 6px;
+                "
+                width="20"
+                height="20"
+              >
+                <use href="../../icons.svg#icon-pizza" />
+              </svg>
+              Vuota Pizzaria
+            </h4>
+            <p class="footer__text">
+              A melhor pizzaria da cidade desde 2010. Sabor artesanal direto pra
+              você.
+            </p>
+          </div>
+          <div>
+            <h4 class="footer__title">Navegação</h4>
+            <a href="index.html" class="footer__link">Início</a>
+            <a href="cardapio.html" class="footer__link">Faça seu Pedido</a>
+            <a href="pedidos.html" class="footer__link">Meus Pedidos</a>
+            <a href="informacoes.html" class="footer__link">Informações</a>
+          </div>
+          <div>
+            <h4 class="footer__title">Contato</h4>
+            <p class="footer__text">
+              <svg
+                style="
+                  display: inline;
+                  vertical-align: middle;
+                  margin-right: 4px;
+                "
+                width="14"
+                height="14"
+              >
+                <use href="../../icons.svg#icon-map-pin" />
+              </svg>
+              Rua das Pizzas, 123 – Centro<br />
+              <svg
+                style="
+                  display: inline;
+                  vertical-align: middle;
+                  margin-right: 4px;
+                "
+                width="14"
+                height="14"
+              >
+                <use href="../../icons.svg#icon-phone" />
+              </svg>
+
+              (11) 98765-4321<br />
+              <svg
+                style="
+                  display: inline;
+                  vertical-align: middle;
+                  margin-right: 4px;
+                "
+                width="14"
+                height="14"
+              >
+                <use href="../../icons.svg#icon-clock" />
+              </svg>
+              Ter–Dom: 18h às 23h
+            </p>
+          </div>
+        </div>
+        <div class="footer__bottom">
+          <p>
+            © 2026 Vuota Pizzaria. Todos os direitos reservados. Feito com
+            <svg
+              style="display: inline; vertical-align: middle"
+              width="14"
+              height="14"
+            >
+              <use href="../../icons.svg#icon-heart-fill" />
+            </svg>
+            e muita mussarela.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="./app.js"></script>
+    <script src="./js/informacoes.js"></script>
+  </body>
+</html>
