@@ -1,367 +1,328 @@
 <!doctype html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vuota Pizzaria – Sabor que encanta</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Poppins:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vuota Pizzaria – Sabor que encanta</title>
 
-    <link rel="stylesheet" href="./styles.css" />
-    <link rel="stylesheet" href="./index.css" />
-  </head>
-  <body>
-    <!-- NAVBAR -->
-    <nav class="navbar" id="navbar">
-      <a href="./index.html" class="navbar__logo">
-        <svg class="navbar__logo-icon" width="30" height="30">
-          <use href="./icons.svg#icon-pizza" />
-        </svg>
-        <span>Vuota</span>Pizzaria
-      </a>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Poppins:wght@400;500;600;700&display=swap"
+    rel="stylesheet" />
 
-      <ul class="navbar__menu" id="navMenu">
-        <li><a href="./index.html" class="navbar__link active">Início</a></li>
-        <li>
-          <a href="./cardapio.html" class="navbar__link navbar__link--cta"
-            >Faça seu Pedido</a
-          >
-        </li>
-        <li><a href="./pedidos.html" class="navbar__link">Meus Pedidos</a></li>
-        <li>
-          <a href="./informacoes.html" class="navbar__link">Informações</a>
-        </li>
-      </ul>
+  <link rel="stylesheet" href="./styles.css" />
+  <link rel="stylesheet" href="./index.css" />
+</head>
 
-      <button class="navbar__hamburger" id="hamburger" aria-label="Abrir menu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-    </nav>
+<body>
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <a href="./index.html" class="navbar__logo">
+      <svg class="navbar__logo-icon" width="30" height="30">
+        <use href="./icons.svg#icon-pizza" />
+      </svg>
+      <span>Vuota</span>Pizzaria
+    </a>
 
-    <!-- CONTEÚDO PRINCIPAL -->
-    <main class="page-wrapper">
-      <!-- HERO -->
-      <section class="hero" id="hero">
-        <div class="hero__overlay"></div>
-        <div class="hero__content">
-          <h1 class="hero__title">
-            A melhor pizza<br />da cidade, <span>na sua mesa</span>
-          </h1>
-          <p class="hero__subtitle">
-            Ingredientes frescos, massa artesanal e muito sabor.<br />
-            Monte seu pedido em minutos, sem complicação.
-          </p>
-          <div class="hero__actions">
-            <a href="cardapio.html" class="btn btn--primary btn--lg">
-              <svg width="22" height="22">
-                <use href="icons.svg#icon-pizza" />
-              </svg>
-              Faça seu Pedido
-            </a>
-            <a href="informacoes.html" class="btn btn--outline-white btn--lg"
-              >Ver Informações</a
-            >
-          </div>
-        </div>
-        <div class="hero__scroll-hint">
-          <span>Rolar para baixo</span>
-          <div class="hero__scroll-arrow"></div>
-        </div>
-      </section>
+    <ul class="navbar__menu" id="navMenu">
+      <li><a href="index.html" class="navbar__link active">Início</a></li>
+      <li><a href="cardapio.html" class="navbar__link">Faça seu Pedido</a></li>
+      <li>
+        <a href="carrinho.html" class="navbar__link">
+          <svg style="display:inline;vertical-align:middle;margin-right:4px" width="16" height="16">
+            <use href="icons.svg#icon-shopping-cart" />
+          </svg>
+          Carrinho
+          <span class="cart-badge" id="cartBadge" style="display:none">0</span>
+        </a>
+      </li>
+      <li><a href="pedidos.html" class="navbar__link">Meus Pedidos</a></li>
+      <li><a href="informacoes.html" class="navbar__link">Informações</a></li>
+    </ul>
 
-      <!-- DESTAQUES -->
-      <section class="section section--alt" id="destaques">
-        <div class="container">
-          <div class="section-title">
-            <span class="section-title__eyebrow">Por que nos escolher?</span>
-            <h2 class="section-title__heading">
-              Feito com amor, entregue com cuidado
-            </h2>
-            <div class="divider"></div>
-          </div>
-          <div class="features-grid">
-            <div class="feature-card">
-              <span class="feature-card__icon">
-                <svg width="36" height="36">
-                  <use href="icons.svg#icon-leaf" />
-                </svg>
-              </span>
-              <h3 class="feature-card__title">Ingredientes Frescos</h3>
-              <p class="feature-card__text">
-                Selecionamos os melhores ingredientes diariamente para garantir
-                o sabor que você merece.
-              </p>
-            </div>
+    <button class="navbar__hamburger" id="hamburger" aria-label="Abrir menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </nav>
 
-            <div class="feature-card">
-              <span class="feature-card__icon">
-                <svg width="36" height="36">
-                  <use href="icons.svg#icon-zap" />
-                </svg>
-              </span>
-              <h3 class="feature-card__title">Entrega Rápida</h3>
-              <p class="feature-card__text">
-                Prometemos entregar sua pizza quentinha em até 40 minutos, ou
-                você ganha um desconto.
-              </p>
-            </div>
-
-            <div class="feature-card">
-              <span class="feature-card__icon">
-                <svg width="36" height="36">
-                  <use href="icons.svg#icon-trophy" />
-                </svg>
-              </span>
-              <h3 class="feature-card__title">Premiada 3 Vezes</h3>
-              <p class="feature-card__text">
-                Reconhecidos como a melhor pizzaria da cidade por 3 anos
-                consecutivos pelo Guia Gastronômico.
-              </p>
-            </div>
-
-            <div class="feature-card">
-              <span class="feature-card__icon">
-                <svg width="36" height="36">
-                  <use href="icons.svg#icon-heart" />
-                </svg>
-              </span>
-              <h3 class="feature-card__title">Feita na Hora</h3>
-              <p class="feature-card__text">
-                Cada pizza é preparada no momento do seu pedido, com massa
-                artesanal e forno a lenha.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- MAIS PEDIDAS -->
-      <section class="section" id="mais-pedidas">
-        <div class="container">
-          <div class="section-title">
-            <span class="section-title__eyebrow">
-              <svg
-                style="
-                  display: inline;
-                  vertical-align: middle;
-                  margin-right: 4px;
-                "
-                width="16"
-                height="16"
-              >
-                <use href="icons.svg#icon-flame" />
-              </svg>
-              Mais Pedidas
-            </span>
-            <h2 class="section-title__heading">
-              As favoritas dos nossos clientes
-            </h2>
-            <div class="divider"></div>
-            <p class="section-title__subheading">
-              Experimente as pizzas que conquistaram o coração da nossa cidade
-            </p>
-          </div>
-
-          <div class="grid-3 pizzas-preview">
-            <div class="card">
-              <div class="card__image-wrapper">
-                <img
-                  class="card__image"
-                  src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=600&q=80"
-                  alt="Pizza Margherita"
-                />
-                <span class="badge badge--primary card__badge"
-                  >Mais Pedida</span
-                >
-              </div>
-              <div class="card__body">
-                <h3 class="card__title">Margherita Clássica</h3>
-                <p class="card__text">
-                  Molho de tomate, mussarela fresca, manjericão e azeite extra
-                  virgem.
-                </p>
-                <div class="card__footer">
-                  <span class="card__price">R$ 38,90</span>
-                  <a href="cardapio.html" class="btn btn--primary btn--sm"
-                    >Pedir</a
-                  >
-                </div>
-              </div>
-            </div>
-
-            <div class="card">
-              <div class="card__image-wrapper">
-                <img
-                  class="card__image"
-                  src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=600&q=80"
-                  alt="Pizza Quatro Queijos"
-                />
-                <span class="badge badge--secondary card__badge">Destaque</span>
-              </div>
-              <div class="card__body">
-                <h3 class="card__title">Quatro Queijos</h3>
-                <p class="card__text">
-                  Mussarela, parmesão, gorgonzola e catupiry em uma combinação
-                  irresistível.
-                </p>
-                <div class="card__footer">
-                  <span class="card__price">R$ 44,90</span>
-                  <a href="cardapio.html" class="btn btn--primary btn--sm"
-                    >Pedir</a
-                  >
-                </div>
-              </div>
-            </div>
-
-            <div class="card">
-              <div class="card__image-wrapper">
-                <img
-                  class="card__image"
-                  src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=600&q=80"
-                  alt="Pizza Calabresa"
-                />
-              </div>
-              <div class="card__body">
-                <h3 class="card__title">Calabresa Especial</h3>
-                <p class="card__text">
-                  Calabresa fatiada, cebola, azeitonas e mussarela. Um clássico
-                  que nunca decepciona.
-                </p>
-                <div class="card__footer">
-                  <span class="card__price">R$ 41,90</span>
-                  <a href="cardapio.html" class="btn btn--primary btn--sm"
-                    >Pedir</a
-                  >
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="text-center mt-xl">
-            <a href="cardapio.html" class="btn btn--outline btn--lg">
-              <svg width="20" height="20">
-                <use href="icons.svg#icon-pizza" />
-              </svg>
-              Ver Cardápio Completo
-            </a>
-          </div>
-        </div>
-      </section>
-
-      <!-- CTA BANNER -->
-      <section class="cta-banner">
-        <div class="container">
-          <h2 class="cta-banner__title">Com fome agora?</h2>
-          <p class="cta-banner__text">
-            Monte seu pedido em menos de 2 minutos e receba quentinho em casa.
-          </p>
-          <a href="cardapio.html" class="btn btn--secondary btn--lg">
+  <!-- CONTEÚDO PRINCIPAL -->
+  <main class="page-wrapper">
+    <!-- HERO -->
+    <section class="hero" id="hero">
+      <div class="hero__overlay"></div>
+      <div class="hero__content">
+        <h1 class="hero__title">
+          A melhor pizza<br />da cidade, <span>na sua mesa</span>
+        </h1>
+        <p class="hero__subtitle">
+          Ingredientes frescos, massa artesanal e muito sabor.<br />
+          Monte seu pedido em minutos, sem complicação.
+        </p>
+        <div class="hero__actions">
+          <a href="cardapio.html" class="btn btn--primary btn--lg">
             <svg width="22" height="22">
               <use href="icons.svg#icon-pizza" />
             </svg>
-            Fazer Pedido Agora →
+            Faça seu Pedido
+          </a>
+          <a href="informacoes.html" class="btn btn--outline-white btn--lg">Ver Informações</a>
+        </div>
+      </div>
+      <div class="hero__scroll-hint">
+        <span>Rolar para baixo</span>
+        <div class="hero__scroll-arrow"></div>
+      </div>
+    </section>
+
+    <!-- DESTAQUES -->
+    <section class="section section--alt" id="destaques">
+      <div class="container">
+        <div class="section-title">
+          <span class="section-title__eyebrow">Por que nos escolher?</span>
+          <h2 class="section-title__heading">
+            Feito com amor, entregue com cuidado
+          </h2>
+          <div class="divider"></div>
+        </div>
+        <div class="features-grid">
+          <div class="feature-card">
+            <span class="feature-card__icon">
+              <svg width="36" height="36">
+                <use href="icons.svg#icon-leaf" />
+              </svg>
+            </span>
+            <h3 class="feature-card__title">Ingredientes Frescos</h3>
+            <p class="feature-card__text">
+              Selecionamos os melhores ingredientes diariamente para garantir
+              o sabor que você merece.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <span class="feature-card__icon">
+              <svg width="36" height="36">
+                <use href="icons.svg#icon-zap" />
+              </svg>
+            </span>
+            <h3 class="feature-card__title">Entrega Rápida</h3>
+            <p class="feature-card__text">
+              Prometemos entregar sua pizza quentinha em até 40 minutos, ou
+              você ganha um desconto.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <span class="feature-card__icon">
+              <svg width="36" height="36">
+                <use href="icons.svg#icon-trophy" />
+              </svg>
+            </span>
+            <h3 class="feature-card__title">Premiada 3 Vezes</h3>
+            <p class="feature-card__text">
+              Reconhecidos como a melhor pizzaria da cidade por 3 anos
+              consecutivos pelo Guia Gastronômico.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <span class="feature-card__icon">
+              <svg width="36" height="36">
+                <use href="icons.svg#icon-heart" />
+              </svg>
+            </span>
+            <h3 class="feature-card__title">Feita na Hora</h3>
+            <p class="feature-card__text">
+              Cada pizza é preparada no momento do seu pedido, com massa
+              artesanal e forno a lenha.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MAIS PEDIDAS -->
+    <section class="section" id="mais-pedidas">
+      <div class="container">
+        <div class="section-title">
+          <span class="section-title__eyebrow">
+            <svg style="
+                  display: inline;
+                  vertical-align: middle;
+                  margin-right: 4px;
+                " width="16" height="16">
+              <use href="icons.svg#icon-flame" />
+            </svg>
+            Mais Pedidas
+          </span>
+          <h2 class="section-title__heading">
+            As favoritas dos nossos clientes
+          </h2>
+          <div class="divider"></div>
+          <p class="section-title__subheading">
+            Experimente as pizzas que conquistaram o coração da nossa cidade
+          </p>
+        </div>
+
+        <div class="grid-3 pizzas-preview">
+          <div class="card">
+            <div class="card__image-wrapper">
+              <img class="card__image" src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=600&q=80"
+                alt="Pizza Margherita" />
+              <span class="badge badge--primary card__badge">Mais Pedida</span>
+            </div>
+            <div class="card__body">
+              <h3 class="card__title">Margherita Clássica</h3>
+              <p class="card__text">
+                Molho de tomate, mussarela fresca, manjericão e azeite extra
+                virgem.
+              </p>
+              <div class="card__footer">
+                <span class="card__price">R$ 38,90</span>
+                <a href="cardapio.html" class="btn btn--primary btn--sm">Pedir</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card__image-wrapper">
+              <img class="card__image" src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=600&q=80"
+                alt="Pizza Quatro Queijos" />
+              <span class="badge badge--secondary card__badge">Destaque</span>
+            </div>
+            <div class="card__body">
+              <h3 class="card__title">Quatro Queijos</h3>
+              <p class="card__text">
+                Mussarela, parmesão, gorgonzola e catupiry em uma combinação
+                irresistível.
+              </p>
+              <div class="card__footer">
+                <span class="card__price">R$ 44,90</span>
+                <a href="cardapio.html" class="btn btn--primary btn--sm">Pedir</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card__image-wrapper">
+              <img class="card__image" src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=600&q=80"
+                alt="Pizza Calabresa" />
+            </div>
+            <div class="card__body">
+              <h3 class="card__title">Calabresa Especial</h3>
+              <p class="card__text">
+                Calabresa fatiada, cebola, azeitonas e mussarela. Um clássico
+                que nunca decepciona.
+              </p>
+              <div class="card__footer">
+                <span class="card__price">R$ 41,90</span>
+                <a href="cardapio.html" class="btn btn--primary btn--sm">Pedir</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center mt-xl">
+          <a href="cardapio.html" class="btn btn--outline btn--lg">
+            <svg width="20" height="20">
+              <use href="icons.svg#icon-pizza" />
+            </svg>
+            Ver Cardápio Completo
           </a>
         </div>
-      </section>
-    </main>
+      </div>
+    </section>
 
-    <!-- FOOTER -->
-    <footer class="footer">
+    <!-- CTA BANNER -->
+    <section class="cta-banner">
       <div class="container">
-        <div class="footer__grid">
-          <div>
-            <h4 class="footer__title">
-              <svg
-                style="
+        <h2 class="cta-banner__title">Com fome agora?</h2>
+        <p class="cta-banner__text">
+          Monte seu pedido em menos de 2 minutos e receba quentinho em casa.
+        </p>
+        <a href="cardapio.html" class="btn btn--secondary btn--lg">
+          <svg width="22" height="22">
+            <use href="icons.svg#icon-pizza" />
+          </svg>
+          Fazer Pedido Agora →
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <h4 class="footer__title">
+            <svg style="
                   display: inline;
                   vertical-align: middle;
                   margin-right: 6px;
-                "
-                width="20"
-                height="20"
-              >
-                <use href="icons.svg#icon-pizza" />
-              </svg>
-              Vuota Pizzaria
-            </h4>
-            <p class="footer__text">
-              A melhor pizzaria da cidade desde 2010. Sabor artesanal direto pra
-              você.
-            </p>
-          </div>
-          <div>
-            <h4 class="footer__title">Navegação</h4>
-            <a href="index.html" class="footer__link">Início</a>
-            <a href="cardapio.html" class="footer__link">Faça seu Pedido</a>
-            <a href="pedidos.html" class="footer__link">Meus Pedidos</a>
-            <a href="informacoes.html" class="footer__link">Informações</a>
-          </div>
-          <div>
-            <h4 class="footer__title">Contato</h4>
-            <p class="footer__text">
-              <svg
-                style="
-                  display: inline;
-                  vertical-align: middle;
-                  margin-right: 4px;
-                "
-                width="14"
-                height="14"
-              >
-                <use href="icons.svg#icon-map-pin" />
-              </svg>
-              Rua das Pizzas, 123 – Centro<br />
-              <svg
-                style="
-                  display: inline;
-                  vertical-align: middle;
-                  margin-right: 4px;
-                "
-                width="14"
-                height="14"
-              >
-                <use href="icons.svg#icon-phone" />
-              </svg>
-              (11) 98765-4321<br />
-              <svg
-                style="
-                  display: inline;
-                  vertical-align: middle;
-                  margin-right: 4px;
-                "
-                width="14"
-                height="14"
-              >
-                <use href="icons.svg#icon-clock" />
-              </svg>
-              Seg–Dom: 18h às 23h
-            </p>
-          </div>
-        </div>
-        <div class="footer__bottom">
-          <p>
-            © 2026 Vuota Pizzaria. Todos os direitos reservados. Feito com
-            <svg
-              style="display: inline; vertical-align: middle"
-              width="14"
-              height="14"
-            >
-              <use href="icons.svg#icon-heart-fill" />
+                " width="20" height="20">
+              <use href="icons.svg#icon-pizza" />
             </svg>
-            e muita mussarela.
+            Vuota Pizzaria
+          </h4>
+          <p class="footer__text">
+            A melhor pizzaria da cidade desde 2010. Sabor artesanal direto pra
+            você.
+          </p>
+        </div>
+        <div>
+          <h4 class="footer__title">Navegação</h4>
+          <a href="index.html" class="footer__link">Início</a>
+          <a href="cardapio.html" class="footer__link">Faça seu Pedido</a>
+          <a href="pedidos.html" class="footer__link">Meus Pedidos</a>
+          <a href="informacoes.html" class="footer__link">Informações</a>
+        </div>
+        <div>
+          <h4 class="footer__title">Contato</h4>
+          <p class="footer__text">
+            <svg style="
+                  display: inline;
+                  vertical-align: middle;
+                  margin-right: 4px;
+                " width="14" height="14">
+              <use href="icons.svg#icon-map-pin" />
+            </svg>
+            Rua das Pizzas, 123 – Centro<br />
+            <svg style="
+                  display: inline;
+                  vertical-align: middle;
+                  margin-right: 4px;
+                " width="14" height="14">
+              <use href="icons.svg#icon-phone" />
+            </svg>
+            (11) 98765-4321<br />
+            <svg style="
+                  display: inline;
+                  vertical-align: middle;
+                  margin-right: 4px;
+                " width="14" height="14">
+              <use href="icons.svg#icon-clock" />
+            </svg>
+            Seg–Dom: 18h às 23h
           </p>
         </div>
       </div>
-    </footer>
+      <div class="footer__bottom">
+        <p>
+          © 2026 Vuota Pizzaria. Todos os direitos reservados. Feito com
+          <svg style="display: inline; vertical-align: middle" width="14" height="14">
+            <use href="icons.svg#icon-heart-fill" />
+          </svg>
+          e muita mussarela.
+        </p>
+      </div>
+    </div>
+  </footer>
 
-    <script src="./app.js"></script>
-  </body>
+  <script src="./app.js"></script>
+</body>
+
 </html>
-
