@@ -2,6 +2,58 @@
    CONFIRMAÇÃO DO PEDIDO
    ======================= */
 
+.orders-badge {
+  display: none;
+}
+
+.hero-confirmation {
+  position: relative;
+  min-height: 30vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:
+    linear-gradient(var(--color-overlay), var(--color-overlay)),
+    url("https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=1600&q=80")
+      center/cover no-repeat;
+  text-align: center;
+  color: var(--color-text-white);
+  overflow: hidden;
+}
+
+.hero-confirmation__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.3) 0%,
+    rgba(0, 0, 0, 0.6) 100%
+  );
+}
+
+.hero-confirmation__content {
+  position: relative;
+  z-index: 1;
+  max-width: 600px;
+  padding: var(--space-xl);
+}
+
+.hero-confirmation__title {
+  font-family: var(--font-heading);
+  font-size: var(--text-5xl);
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: var(--space-md);
+  color: var(--color-text-white);
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+}
+
+.hero-confirmation__subtitle {
+  font-size: var(--text-lg);
+  color: rgba(255, 255, 255, 0.88);
+  line-height: 1.6;
+}
+
 /* ---- SEÇÃO 1: CONFIRMAÇÃO ---- */
 
 .confirmation {
@@ -241,14 +293,22 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border-radius: var(--radius-full);
+
+  width: 52px;
+  height: 52px;
+  flex: 0 0 52px;
+
+  border-radius: 50%;
+  padding: 0;
+  line-height: 1;
+  box-sizing: border-box;
+
   font-size: var(--text-sm);
   font-weight: 700;
   font-family: var(--font-body);
   background-color: var(--color-bg-card);
   border: 2px solid var(--color-border);
   color: var(--color-text);
-  min-width: 52px;
 }
 
 /* Cor dos chips por column */
@@ -345,10 +405,15 @@
   .page-wrapper--confirmation {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
   }
 
   .page-wrapper--confirmation section {
     width: 50%;
+  }
+
+  .page-wrapper--confirmation .hero-confirmation {
+    width: 100%;
   }
 
   .confirmation {

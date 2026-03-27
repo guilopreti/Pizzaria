@@ -46,10 +46,10 @@ const PizzaStore = {
 
   // --- CARRINHO ---
   getCart() {
-    return JSON.parse(localStorage.getItem('bellaPizzaCart') || '[]');
+    return JSON.parse(localStorage.getItem('vuotaPizzaCart') || '[]');
   },
   saveCart(cart) {
-    localStorage.setItem('bellaPizzaCart', JSON.stringify(cart));
+    localStorage.setItem('vuotaPizzaCart', JSON.stringify(cart));
   },
   addToCart(item) {
     const cart = this.getCart();
@@ -68,7 +68,7 @@ const PizzaStore = {
     this.updateCartBadge();
   },
   clearCart() {
-    localStorage.removeItem('bellaPizzaCart');
+    localStorage.removeItem('vuotaPizzaCart');
     this.updateCartBadge();
   },
   getCartTotal() {
@@ -85,23 +85,45 @@ const PizzaStore = {
 
   // --- PEDIDOS ---
   getPedidos() {
-    return JSON.parse(localStorage.getItem('bellaPizzaPedidos') || '[]');
+    return JSON.parse(localStorage.getItem('vuotaPizzaPedidos') || '[]');
   },
   savePedido(pedido) {
     const pedidos = this.getPedidos();
-    pedido.id = 'PED-' + Date.now();
+    pedido.id = pedidos.length === 0 ? 11 : Number(pedidos[0].id) + 1
     pedido.dataCriacao = new Date().toISOString();
-    pedido.status = 'Aguardando confirmação';
+    pedido.status = 'preparando';
     pedido.previsaoEntrega = this.calcularPrevisao();
     pedidos.unshift(pedido);
-    localStorage.setItem('bellaPizzaPedidos', JSON.stringify(pedidos));
+    localStorage.setItem('vuotaPizzaPedidos', JSON.stringify(pedidos));
     this.clearCart();
+    this.updateOrdersBadge();
     return pedido;
   },
   calcularPrevisao() {
     const agora = new Date();
     agora.setMinutes(agora.getMinutes() + 35 + Math.floor(Math.random() * 10));
     return agora.toISOString();
+  },
+  updatePedido(pedido) {
+    let pedidos = this.getPedidos();
+    const pedidoIndex = pedidos.findIndex(({id}) => id === pedido.id)
+    if (pedidoIndex !== -1){
+      pedidos[pedidoIndex] = pedido
+      localStorage.setItem('vuotaPizzaPedidos', JSON.stringify(pedidos))
+      this.updateOrdersBadge();
+    }
+  },
+  updateOrdersBadge() {
+    const badge = document.getElementById('ordersBadge');
+    if (badge) {
+      const count = this.getPedidos().filter(p => p.status !== 'entregue').length;
+      if (count > 0) {
+        badge.textContent = count;
+        badge.style.display = 'inline-flex';
+      } else {
+        badge.style.display = 'none';
+      }
+    }
   }
 };
 
@@ -133,4 +155,5 @@ window.Formatters = Formatters;
 // Atualiza badge do carrinho em todas as páginas
 document.addEventListener('DOMContentLoaded', () => {
   PizzaStore.updateCartBadge();
+  PizzaStore.updateOrdersBadge();
 });

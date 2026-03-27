@@ -187,8 +187,8 @@ const Carrinho = {
         quantidade: item.quantidade,
         tamanho: item.tamanho,
         observacoes: item.observacoes || '',
-        endereco: endereco
       })),
+      endereco: endereco,
       data_pedido: dataPedido,
       total: total.toFixed(2)
     };
