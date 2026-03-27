@@ -28,14 +28,17 @@
     });
   });
 
-  const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-  navMenu?.querySelectorAll('.navbar__link').forEach(link => {
-    const href = link.getAttribute('href');
-    if (href === currentPage) {
-      navMenu.querySelectorAll('.navbar__link').forEach(l => l.classList.remove('active'));
-      link.classList.add('active');
-    }
-  });
+  const currentPage = (window.location.pathname.split('/').pop() || 'index.html').replace(/^\.\//, '');
+  const allLinks = navMenu?.querySelectorAll('.navbar__link');
+  if (allLinks) {
+    allLinks.forEach(l => l.classList.remove('active'));
+    allLinks.forEach(link => {
+      const href = (link.getAttribute('href') || '').replace(/^\.\//, '');
+      if (href === currentPage) {
+        link.classList.add('active');
+      }
+    });
+  }
 })();
 
 // -------- PIZZASTORE: gerencia carrinho e pedidos --------
@@ -76,7 +79,7 @@ const PizzaStore = {
     if (badge) {
       const count = this.getCart().reduce((sum, i) => sum + i.quantidade, 0);
       badge.textContent = count;
-      badge.style.display = count > 0 ? 'inline-block' : 'none';
+      badge.style.display = count > 0 ? 'inline-flex' : 'none';
     }
   },
 
@@ -126,4 +129,8 @@ const Formatters = {
 // Expõe globalmente para todas as telas usarem
 window.PizzaStore = PizzaStore;
 window.Formatters = Formatters;
-  
+
+// Atualiza badge do carrinho em todas as páginas
+document.addEventListener('DOMContentLoaded', () => {
+  PizzaStore.updateCartBadge();
+});

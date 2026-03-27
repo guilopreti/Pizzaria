@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Carrinho – Vuota Pizzaria</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Poppins:wght@400;500;600;700&display=swap"
+    rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="css/carrinho.css" />
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <a href="index.html" class="navbar__logo">
+      <svg class="navbar__logo-icon" width="30" height="30">
+        <use href="icons.svg#icon-pizza" />
+      </svg><span>Vuota</span>Pizzaria
+    </a>
+
+    <ul class="navbar__menu" id="navMenu">
+      <li><a href="index.html" class="navbar__link">Início</a></li>
+      <li><a href="cardapio.html" class="navbar__link">Faça seu Pedido</a></li>
+      <li>
+        <a href="carrinho.html" class="navbar__link active">
+          <svg style="display:inline;vertical-align:middle;margin-right:4px" width="16" height="16">
+            <use href="icons.svg#icon-shopping-cart" />
+          </svg>
+          Carrinho
+          <span class="cart-badge" id="cartBadge">0</span>
+        </a>
+      </li>
+      <li><a href="pedidos.html" class="navbar__link">Meus Pedidos</a></li>
+      <li><a href="informacoes.html" class="navbar__link">Informações</a></li>
+    </ul>
+
+    <button class="navbar__hamburger" id="hamburger" aria-label="Abrir menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </nav>
+
+  <!-- CONTEÚDO PRINCIPAL -->
+  <main class="page-wrapper">
+
+    <!-- HERO CARRINHO -->
+    <section class="hero-cart">
+      <div class="hero-cart__overlay"></div>
+      <div class="hero-cart__content">
+        <h1 class="hero-cart__title">Seu Carrinho</h1>
+        <p class="hero-cart__subtitle">Revise seus itens e finalize seu pedido</p>
+      </div>
+    </section>
+
+    <!-- CARRINHO -->
+    <section class="cart-section">
+      <div class="container">
+
+        <!-- ESTADO VAZIO -->
+        <div class="cart-empty" id="carrinhoEmpty" style="display:none">
+          <div class="cart-empty__icon">
+            <svg width="64" height="64">
+              <use href="icons.svg#icon-shopping-cart" />
+            </svg>
+          </div>
+          <h2 class="cart-empty__title">Seu carrinho está vazio</h2>
+          <p class="cart-empty__text">Adicione pizzas deliciosas do nosso cardápio!</p>
+          <a href="cardapio.html" class="btn btn--primary btn--lg">
+            <svg width="20" height="20">
+              <use href="icons.svg#icon-pizza" />
+            </svg>
+            Ver Cardápio
+          </a>
+        </div>
+
+        <!-- CONTEÚDO DO CARRINHO -->
+        <div class="carrinho-content" id="carrinhoContent" style="display:none">
+          <div class="cart-layout">
+
+            <!-- LISTA DE ITENS -->
+            <div class="cart-items">
+              <div class="cart-items__header">
+                <h2 class="cart-items__title">Itens do Pedido</h2>
+                <span class="cart-items__count" id="itemCount">0 itens</span>
+              </div>
+              <div class="cart-items__list" id="carrinhoList">
+                <!-- Itens renderizados via JS -->
+              </div>
+            </div>
+
+            <!-- SIDEBAR: RESUMO + ENDEREÇO -->
+            <aside class="cart-sidebar">
+
+              <!-- ENDEREÇO DE ENTREGA -->
+              <div class="cart-address">
+                <h3 class="cart-address__title">
+                  <svg width="18" height="18">
+                    <use href="icons.svg#icon-map-pin" />
+                  </svg>
+                  Endereço de Entrega
+                </h3>
+                <div class="form-group">
+                  <label class="form-label" for="endRua">Rua</label>
+                  <input type="text" id="endRua" class="form-input" placeholder="Ex: Rua das Flores" required />
+                </div>
+                <div class="cart-address__row">
+                  <div class="form-group">
+                    <label class="form-label" for="endNumero">Número</label>
+                    <input type="text" id="endNumero" class="form-input" placeholder="123A" required />
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label" for="endBairro">Bairro</label>
+                    <input type="text" id="endBairro" class="form-input" placeholder="Centro" required />
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="endCep">CEP</label>
+                  <input type="text" id="endCep" class="form-input" placeholder="00000-000" maxlength="9" required />
+                </div>
+              </div>
+
+              <!-- RESUMO DO PEDIDO -->
+              <div class="cart-summary">
+                <h3 class="cart-summary__title">Resumo do Pedido</h3>
+                <div class="cart-summary__lines" id="summaryLines">
+                  <!-- Linhas do resumo via JS -->
+                </div>
+                <div class="cart-summary__total">
+                  <span>Total</span>
+                  <span id="summaryTotal">R$ 0,00</span>
+                </div>
+                <button class="btn btn--primary btn--lg w-full" id="finalizarBtn">
+                  Finalizar Pedido
+                </button>
+                <a href="cardapio.html" class="btn btn--outline w-full mt-md">
+                  <svg width="16" height="16">
+                    <use href="icons.svg#icon-pizza" />
+                  </svg>
+                  Continuar Comprando
+                </a>
+              </div>
+
+            </aside>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <h4 class="footer__title">
+            <svg style="display:inline;vertical-align:middle;margin-right:6px" width="20" height="20">
+              <use href="icons.svg#icon-pizza" />
+            </svg>
+            Vuota Pizzaria
+          </h4>
+          <p class="footer__text">A melhor pizzaria da cidade desde 2010. Sabor artesanal direto pra você.</p>
+        </div>
+        <div>
+          <h4 class="footer__title">Navegação</h4>
+          <a href="index.html" class="footer__link">Início</a>
+          <a href="cardapio.html" class="footer__link">Faça seu Pedido</a>
+          <a href="carrinho.html" class="footer__link">Carrinho</a>
+          <a href="pedidos.html" class="footer__link">Meus Pedidos</a>
+          <a href="informacoes.html" class="footer__link">Informações</a>
+        </div>
+        <div>
+          <h4 class="footer__title">Contato</h4>
+          <p class="footer__text">
+            <svg style="display:inline;vertical-align:middle;margin-right:4px" width="14" height="14">
+              <use href="icons.svg#icon-map-pin" />
+            </svg>
+            Rua das Pizzas, 123 – Centro<br />
+            <svg style="display:inline;vertical-align:middle;margin-right:4px" width="14" height="14">
+              <use href="icons.svg#icon-phone" />
+            </svg>
+            (11) 98765-4321<br />
+            <svg style="display:inline;vertical-align:middle;margin-right:4px" width="14" height="14">
+              <use href="icons.svg#icon-clock" />
+            </svg>
+            Seg–Dom: 18h às 23h
+          </p>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>© 2026 Vuota Pizzaria. Todos os direitos reservados. Feito com
+          <svg style="display:inline;vertical-align:middle" width="14" height="14">
+            <use href="icons.svg#icon-heart-fill" />
+          </svg>
+          e muita mussarela.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+  <script src="js/carrinho.js"></script>
+</body>
+
+</html>

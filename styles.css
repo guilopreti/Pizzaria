@@ -283,6 +283,25 @@ img { max-width: 100%; display: block; }
 .mb-md { margin-bottom: var(--space-md); }
 .mb-lg { margin-bottom: var(--space-lg); }
 .w-full { width: 100%; }
+
+/* ---------- CART BADGE ---------- */
+.cart-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 5px;
+  border-radius: 9999px;
+  background-color: var(--color-secondary);
+  color: var(--color-text-white);
+  font-size: 11px;
+  font-weight: 700;
+  margin-left: 4px;
+  line-height: 1;
+  vertical-align: middle;
+}
+
 .hidden { display: none; }
 
 .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-lg); }
