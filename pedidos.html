@@ -1,0 +1,343 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Confirmação do Pedido | Vuota Pizzaria</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- <link rel="icon" href="icons.svg#icon-pizza" /> Verificar icon depois -->
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="css/pedidos.css" />
+  </head>
+
+  <body>
+    <!-- NAVBAR -->
+    <nav class="navbar" id="navbar">
+      <a href="index.html" class="navbar__logo">
+        <svg class="navbar__logo-icon" width="30" height="30">
+          <use href="icons.svg#icon-pizza" />
+        </svg>
+        <span>Vuota</span>Pizzaria
+      </a>
+
+      <ul class="navbar__menu" id="navMenu">
+        <li><a href="index.html" class="navbar__link">Início</a></li>
+        <li>
+          <a href="cardapio.html" class="navbar__link">Faça seu Pedido</a>
+        </li>
+        <li>
+          <a href="carrinho.html" class="navbar__link active">
+            <svg
+              style="display: inline; vertical-align: middle; margin-right: 4px"
+              width="16"
+              height="16"
+            >
+              <use href="icons.svg#icon-shopping-cart" />
+            </svg>
+            Carrinho
+            <span class="cart-badge" id="cartBadge">0</span>
+          </a>
+        </li>
+        <li>
+          <a href="pedidos.html" class="navbar__link">
+            Meus Pedidos
+            <span class="cart-badge orders-badge" id="ordersBadge">0</span>
+          </a>
+        </li>
+        <li><a href="informacoes.html" class="navbar__link">Informações</a></li>
+      </ul>
+
+      <button class="navbar__hamburger" id="hamburger" aria-label="Abrir menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </nav>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main class="page-wrapper page-wrapper--confirmation">
+      <!-- HERO MEUS PEDIDOS -->
+      <section class="hero-confirmation">
+        <div class="hero-confirmation__overlay"></div>
+        <div class="hero-confirmation__content">
+          <h1 class="hero-confirmation__title">Meus Pedidos</h1>
+          <p class="hero-confirmation__subtitle">
+            Acompanhe o status da sua pizza até ela chegar quentinha na sua
+            casa.
+          </p>
+        </div>
+      </section>
+
+      <!-- SEÇÃO 1: CONFIRMAÇÃO DO PEDIDO -->
+      <section
+        class="confirmation section"
+        aria-labelledby="confirmation-title"
+      >
+        <div class="container confirmation__container">
+          <div class="confirmation__header">
+            <!-- <div class="confirmation__icon" aria-hidden="true"></div> -->
+            <svg class="confirmation__icon" width="85" height="85">
+              <use href="icons.svg#icon-circle-check" />
+            </svg>
+            <h1 class="confirmation__title" id="confirmation-title">
+              Pedido Confirmado!
+            </h1>
+            <p class="confirmation__number" id="orderNumber">Pedido #—</p>
+            <div
+              id="otherOrdersContainer"
+              style="display: none; margin-top: var(--space-md)"
+            >
+              <select
+                id="orderSelect"
+                style="
+                  padding: 8px 12px;
+                  border-radius: var(--radius-md);
+                  border: 2px solid var(--color-border);
+                  font-family: var(--font-body);
+                  font-size: var(--text-sm);
+                  font-weight: 600;
+                  color: var(--color-text);
+                  cursor: pointer;
+                  background-color: var(--color-bg);
+                "
+              >
+                <option value="">Ver outro pedido</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="card confirmation__card">
+            <ul class="confirmation__list" id="listItems">
+              <li class="confirmation__item"></li>
+            </ul>
+            <div class="confirmation__total">
+              <span>Total</span>
+              <span class="confirmation__total-price" id="orderTotal"
+                >R$ —</span
+              >
+            </div>
+          </div>
+
+          <div class="card confirmation__address">
+            <svg
+              class="confirmation__address-icon"
+              aria-hidden="true"
+              width="18"
+              height="18"
+            >
+              <use href="icons.svg#icon-map-pin" />
+            </svg>
+            <div>
+              <h3 class="confirmation__address-title">Entregar em</h3>
+              <p class="confirmation__address-text" id="deliveryAddress">—</p>
+            </div>
+          </div>
+
+          <p class="confirmation__notice">
+            Obrigado por escolher a Vuota Pizzaria! Seu pedido está sendo
+            preparado com carinho. A previsão de entrega é até as
+            <strong id="deliveryForecast">—</strong>. Caso a entrega ultrapasse
+            40 minutos, você tem direito a um desconto, é só avisar!
+          </p>
+
+          <div class="confirmation__actions">
+            <a href="cardapio.html" class="btn btn--primary">
+              <svg aria-hidden="true" width="18" height="18">
+                <use href="icons.svg#icon-pizza" />
+              </svg>
+              Fazer Novo Pedido
+            </a>
+            <button
+              class="btn btn--outline"
+              id="btnConfirmDelivery"
+              type="button"
+            >
+              ✓ Confirmar Entrega
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- SEÇÃO 2: ACOMPANHAMENTO DOS PEDIDOS DO DIA -->
+      <section class="tracking section" aria-labelledby="tracking-title">
+        <div class="container">
+          <div class="section-title">
+            <h2 class="section-title__heading" id="tracking-title">
+              Acompanhe os pedidos do dia
+            </h2>
+            <div class="divider"></div>
+            <p class="section-title__subheading">
+              Veja em tempo real onde está o seu pedido e os demais da fila.
+            </p>
+          </div>
+
+          <div class="tracking__columns">
+            <div class="tracking__column tracking__column--delivered">
+              <h3 class="tracking__column-title">
+                <span class="tracking__column-dot" aria-hidden="true"></span>
+                Entregues
+              </h3>
+              <ul class="tracking__list">
+                <li class="tracking__number">01</li>
+                <li class="tracking__number">02</li>
+                <li class="tracking__number">03</li>
+                <li class="tracking__number">04</li>
+                <li class="tracking__number">05</li>
+              </ul>
+            </div>
+
+            <div class="tracking__column tracking__column--underway">
+              <h3 class="tracking__column-title">
+                <span class="tracking__column-dot" aria-hidden="true"></span>
+                A Caminho
+              </h3>
+              <ul class="tracking__list">
+                <li class="tracking__number">06</li>
+                <li class="tracking__number">07</li>
+                <li class="tracking__number">08</li>
+              </ul>
+            </div>
+
+            <div class="tracking__column tracking__column--preparing">
+              <h3 class="tracking__column-title">
+                <span class="tracking__column-dot" aria-hidden="true"></span>
+                Preparando
+              </h3>
+              <ul class="tracking__list">
+                <li class="tracking__number">09</li>
+                <li class="tracking__number">10</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SEÇÃO: SEM PEDIDOS -->
+      <section
+        class="empty-state section"
+        id="emptyState"
+        aria-labelledby="empty-state-title"
+      >
+        <div class="container empty-state__container">
+          <svg
+            class="empty-state__icon"
+            aria-hidden="true"
+            width="80"
+            height="80"
+          >
+            <use href="icons.svg#icon-pizza" />
+          </svg>
+          <h1 class="empty-state__title" id="empty-state-title">
+            Nenhum pedido encontrado
+          </h1>
+          <p class="empty-state__text">
+            Parece que você ainda não fez nenhum pedido. Que tal escolher uma
+            pizza?
+          </p>
+          <a href="cardapio.html" class="btn btn--primary btn--lg">
+            Ver Cardápio
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__grid">
+          <div>
+            <h4 class="footer__title">
+              <svg
+                style="
+                  display: inline;
+                  vertical-align: middle;
+                  margin-right: 6px;
+                "
+                width="20"
+                height="20"
+              >
+                <use href="icons.svg#icon-pizza" />
+              </svg>
+              Vuota Pizzaria
+            </h4>
+            <p class="footer__text">
+              A melhor pizzaria da cidade desde 2010. Sabor artesanal direto pra
+              você.
+            </p>
+          </div>
+          <div>
+            <h4 class="footer__title">Navegação</h4>
+            <a href="index.html" class="footer__link">Início</a>
+            <a href="cardapio.html" class="footer__link">Faça seu Pedido</a>
+            <a href="carrinho.html" class="footer__link">Carrinho</a>
+            <a href="pedidos.html" class="footer__link">Meus Pedidos</a>
+            <a href="informacoes.html" class="footer__link">Informações</a>
+          </div>
+          <div>
+            <h4 class="footer__title">Contato</h4>
+            <p class="footer__text">
+              <svg
+                style="
+                  display: inline;
+                  vertical-align: middle;
+                  margin-right: 4px;
+                "
+                width="14"
+                height="14"
+              >
+                <use href="icons.svg#icon-map-pin" />
+              </svg>
+              Rua das Pizzas, 123 – Centro<br />
+              <svg
+                style="
+                  display: inline;
+                  vertical-align: middle;
+                  margin-right: 4px;
+                "
+                width="14"
+                height="14"
+              >
+                <use href="icons.svg#icon-phone" />
+              </svg>
+              (11) 98765-4321<br />
+              <svg
+                style="
+                  display: inline;
+                  vertical-align: middle;
+                  margin-right: 4px;
+                "
+                width="14"
+                height="14"
+              >
+                <use href="icons.svg#icon-clock" />
+              </svg>
+              Seg–Dom: 18h às 23h
+            </p>
+          </div>
+        </div>
+        <div class="footer__bottom">
+          <p>
+            © 2026 Vuota Pizzaria. Todos os direitos reservados. Feito com
+            <svg
+              style="display: inline; vertical-align: middle"
+              width="14"
+              height="14"
+            >
+              <use href="icons.svg#icon-heart-fill" />
+            </svg>
+            e muita mussarela.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="app.js"></script>
+    <script src="js/pedidos.js"></script>
+  </body>
+</html>
