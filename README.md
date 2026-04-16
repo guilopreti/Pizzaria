@@ -2,6 +2,8 @@
 
 Site estático de pizzaria desenvolvido como projeto acadêmico com HTML, CSS e JavaScript puro.
 
+Acesse em: https://guilopreti.github.io/Pizzaria/
+
 ## 👥 Equipe
 
 | Membro            | Responsabilidade                 |
